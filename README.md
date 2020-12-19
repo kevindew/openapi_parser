@@ -1,5 +1,6 @@
 # OpenAPI 3 Parser
 
+
 [![Build Status](https://travis-ci.org/kevindew/openapi3_parser.svg?branch=master)](https://travis-ci.org/kevindew/openapi3_parser)
 
 This a Ruby based parser/validator for [OpenAPI 3][openapi-3]. It is used to
