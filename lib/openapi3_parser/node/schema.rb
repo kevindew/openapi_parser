@@ -120,9 +120,11 @@ module Openapi3Parser
       # @return [Boolean]
       def requires?(property)
         if property.is_a?(Schema)
+          # compare node_context of objects to ensure references aren't treated
+          # as equal - only direct properties of this object will pass.
           properties.to_h
                     .select { |k, _| required.to_a.include?(k) }
-                    .any? { |_, schema| schema == property }
+                    .any? { |_, schema| schema.node_context == property.node_context }
         else
           required.to_a.include?(property)
         end
